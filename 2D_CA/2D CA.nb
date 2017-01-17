@@ -1,0 +1,479 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.4' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     17070,        471]
+NotebookOptionsPosition[     16827,        458]
+NotebookOutlinePosition[     17169,        473]
+CellTagsIndexPosition[     17126,        470]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{
+    "This", " ", "starts", " ", "with", " ", "the", " ", "list", " ", 
+     "given"}], ",", 
+    RowBox[{
+    "then", " ", "evolves", " ", "rule", " ", "30", " ", "for", " ", "four", 
+     " ", 
+     RowBox[{"steps", "."}]}]}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"CellularAutomaton", "[", 
+     RowBox[{"30", ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "0", ",", "0", ",", "0", ",", "1", ",", "0", ",", "0", ",", "0"}], 
+       "}"}], ",", "4"}], "]"}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "This", " ", "shows", " ", "100", " ", "steps", " ", "of", " ", "rule", 
+     " ", "30", " ", "evolution", " ", "from", " ", "random", " ", "initial", 
+     " ", 
+     RowBox[{"conditions", "."}]}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"ArrayPlot", "[", 
+     RowBox[{"CellularAutomaton", "[", 
+      RowBox[{"30", ",", 
+       RowBox[{"RandomInteger", "[", 
+        RowBox[{"1", ",", "250"}], "]"}], ",", "100"}], "]"}], "]"}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "the", " ", "right", " ", "neighbor", " ", "of", " ", "the", " ", "cell", 
+     " ", "at", " ", "the", " ", "end", " ", "is", " ", "the", " ", "cell", 
+     " ", "at", " ", "the", " ", "begining"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"CellularAutomaton", "[", 
+     RowBox[{"30", ",", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", "0", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
+      "1"}], "]"}], ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "This", " ", "shows", " ", "rule", " ", "30", " ", "evolving", " ", 
+     "from", " ", "an", " ", "initial", " ", "condition", " ", "containing", 
+     " ", "a", " ", "single", " ", "black", " ", 
+     RowBox[{"cell", "."}]}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"ArrayPlot", "[", 
+     RowBox[{"CellularAutomaton", "[", 
+      RowBox[{"30", ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", "1", "}"}], ",", "0"}], "}"}], ",", "100"}], "]"}], 
+     "]"}], ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "This", " ", "shows", " ", "rule", " ", "30", " ", "evolving", " ", 
+     "from", " ", "an", " ", "initial", " ", "condition", " ", "consisting", 
+     " ", "of", " ", "a", " ", "seed", " ", "on", " ", "a", " ", "background",
+      " ", "of", " ", "repeated", " ", 
+     RowBox[{"blocks", "."}]}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"ArrayPlot", "[", 
+     RowBox[{"CellularAutomaton", "[", 
+      RowBox[{"30", ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"1", ",", "1"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"1", ",", "0", ",", "1", ",", "1"}], "}"}]}], "}"}], ",", 
+       "100"}], "]"}], "]"}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{
+     "This", " ", "sets", " ", "up", " ", "an", " ", "initial", " ", 
+      "condition", " ", "with", " ", "black", " ", "cells", " ", "at", " ", 
+      "offsets"}], " ", "-", 
+     RowBox[{"+", "40."}]}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"ArrayPlot", "[", 
+     RowBox[{"CellularAutomaton", "[", 
+      RowBox[{"30", ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", "1", "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"-", "40"}], "}"}]}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", "1", "}"}], ",", 
+             RowBox[{"{", "40", "}"}]}], "}"}]}], "}"}], ",", "0"}], "}"}], 
+       ",", "100"}], "]"}], "]"}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "This", " ", "evolves", " ", "a", " ", "single", " ", "neighborhood", " ",
+      "for", " ", "1", " ", 
+     RowBox[{"step", "."}]}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"CellularAutomaton", "[", 
+     RowBox[{"30", ",", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", "1", ",", "0"}], "}"}], ",", "1"}], "]"}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "Here", " ", "are", " ", "the", " ", "8", " ", "possible", " ", 
+     "neighborhoods", " ", "for", " ", "a", " ", "cellular", " ", 
+     RowBox[{"automaton", "."}]}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Tuples", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"1", ",", "0"}], "}"}], ",", "3"}], "]"}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{"This", " ", "runs", " ", "the", " ", "general"}], ",", 
+     RowBox[{
+      RowBox[{
+      "rule", " ", "with", " ", "rule", " ", "number", " ", "921408", " ", 
+       "and", " ", "k"}], "=", "3"}], ",", " ", 
+     RowBox[{"r", "=", "1."}]}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"ArrayPlot", "[", 
+     RowBox[{"CellularAutomaton", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"921408", ",", "3", ",", "1"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", "1", "}"}], ",", "0"}], "}"}], ",", "100"}], "]"}], 
+     "]"}], ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{"This", " ", "runs", " ", "the"}], ",", 
+     RowBox[{
+     "totalistic", " ", "rule", " ", "with", " ", "code", " ", "number", " ", 
+      "867"}], ",", " ", 
+     RowBox[{"k", "=", 
+      RowBox[{
+       RowBox[{"3", " ", "and", " ", "r"}], "=", "1."}]}]}], "*)"}], "\n", 
+   RowBox[{
+    RowBox[{"ArrayPlot", "[", 
+     RowBox[{"CellularAutomaton", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"867", ",", 
+         RowBox[{"{", 
+          RowBox[{"3", ",", "1"}], "}"}], ",", "1"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", "1", "}"}], ",", "0"}], "}"}], ",", "100"}], "]"}], 
+     "]"}], ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "This", " ", "runs", " ", "an", " ", "additive", " ", "cellular", " ", 
+     "automaton", " ", "whose", " ", "rule", " ", "adds", " ", "all", " ", 
+     "values", " ", "in", " ", "each", " ", "neighborhood", " ", "modulo", 
+     " ", "4."}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"ArrayPlot", "[", 
+     RowBox[{"CellularAutomaton", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"Mod", "[", 
+           RowBox[{
+            RowBox[{"Apply", "[", 
+             RowBox[{"Plus", ",", "#"}], "]"}], ",", "4"}], "]"}], "&"}], ",", 
+         RowBox[{"{", "}"}], ",", "1"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", "1", "}"}], ",", "0"}], "}"}], ",", "100"}], "]"}], 
+     "]"}], ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "The", " ", "function", " ", "is", " ", "given", " ", "the", " ", "step", 
+     " ", "number", " ", "as", " ", "a", " ", "second", " ", 
+     RowBox[{"argument", "."}]}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"ArrayPlot", "[", 
+     RowBox[{"CellularAutomaton", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"Mod", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"Total", "[", "#", "]"}], "+", "#2"}], ",", "4"}], "]"}],
+           "&"}], ",", 
+         RowBox[{"{", "}"}], ",", "1"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", "1", "}"}], ",", "0"}], "}"}], ",", "100"}], "]"}], 
+     "]"}], ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{
+     "When", " ", "you", " ", "specify", " ", "rules", " ", "by", " ", 
+      "functions"}], ",", 
+     RowBox[{
+     "the", " ", "values", " ", "of", " ", "cells", " ", "need", " ", "not", 
+      " ", "be", " ", 
+      RowBox[{"integers", "."}]}]}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"ArrayPlot", "[", 
+     RowBox[{"CellularAutomaton", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"Mod", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"1", "/", "2"}], " ", 
+             RowBox[{"Apply", "[", 
+              RowBox[{"Plus", ",", "#"}], "]"}]}], ",", "1"}], "]"}], "&"}], 
+         ",", 
+         RowBox[{"{", "}"}], ",", "1"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", "1", "}"}], ",", "0"}], "}"}], ",", "100"}], "]"}], 
+     "]"}], ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", "Symbolic", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Simplify", "[", 
+     RowBox[{
+      RowBox[{"CellularAutomaton", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Mod", "[", 
+            RowBox[{
+             RowBox[{"Apply", "[", 
+              RowBox[{"Plus", ",", "#"}], "]"}], ",", "2"}], "]"}], "&"}], 
+          ",", 
+          RowBox[{"{", "}"}], ",", "1"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", "a", "}"}], ",", "0"}], "}"}], ",", "2"}], "]"}], ",", 
+      RowBox[{"a", "\[Element]", "Integers"}]}], "]"}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{
+     "This", " ", "runs", " ", "rule", " ", "30", " ", "for", " ", "5", " ", 
+      "steps"}], ",", 
+     RowBox[{"keeping", " ", "only", " ", "the", " ", "last", " ", 
+      RowBox[{"step", "."}]}]}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"CellularAutomaton", "[", 
+     RowBox[{"30", ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", "1", "}"}], ",", "0"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"{", "5", "}"}], "}"}]}], "]"}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{"This", " ", "keeps", " ", "last", " ", "two", " ", "steps"}], 
+    "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"CellularAutomaton", "[", 
+     RowBox[{"30", ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", "1", "}"}], ",", "0"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"4", ",", "5"}], "}"}], "}"}]}], "]"}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{"This", " ", "gives", " ", "one", " ", 
+     RowBox[{"step", "."}]}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"CellularAutomaton", "[", 
+     RowBox[{"30", ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "0", ",", "1", ",", "0", ",", "0"}], "}"}]}], "]"}], 
+    ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{"This", " ", "evolves", " ", "for", " ", "100", " ", "steps"}], 
+     ",", 
+     RowBox[{
+     "but", " ", "keeps", " ", "only", " ", "every", " ", "other", " ", 
+      RowBox[{"step", "."}]}]}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"ArrayPlot", "[", 
+     RowBox[{"CellularAutomaton", "[", 
+      RowBox[{"30", ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", "1", "}"}], ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", "100", ",", "2"}], "}"}], "}"}]}], "]"}], "]"}], 
+    ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{"This", " ", "keeps", " ", "all", " ", "steps"}], ",", 
+     RowBox[{
+     "but", " ", "drops", " ", "cells", " ", "at", " ", "offsets", " ", 
+      "more", " ", "than", " ", "20", " ", "on", " ", "the", " ", 
+      RowBox[{"left", "."}]}]}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"ArrayPlot", "[", 
+     RowBox[{"CellularAutomaton", "[", 
+      RowBox[{"30", ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", "1", "}"}], ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"100", ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"-", "20"}], ",", "100"}], "}"}]}], "}"}]}], "]"}], "]"}], 
+    ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "This", " ", "keeps", " ", "just", " ", "the", " ", "center", " ", 
+     "column", " ", "of", " ", 
+     RowBox[{"cells", "."}]}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"CellularAutomaton", "[", 
+     RowBox[{"30", ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", "1", "}"}], ",", "0"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"20", ",", 
+        RowBox[{"{", "0", "}"}]}], "}"}]}], "]"}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{"By", " ", "default"}], ",", 
+     RowBox[{
+     "only", " ", "the", " ", "parts", " ", "that", " ", "are", " ", "not", 
+      " ", "constant", " ", "black", " ", "are", " ", 
+      RowBox[{"kept", "."}]}]}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"ArrayPlot", "[", 
+     RowBox[{"CellularAutomaton", "[", 
+      RowBox[{"225", ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", "1", "}"}], ",", "0"}], "}"}], ",", "100"}], "]"}], 
+     "]"}], ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "includes", " ", "all", " ", "cells", " ", "that", " ", "could", " ", 
+     "be", " ", "affected", " ", "by", " ", "a", " ", "cellular", " ", 
+     "automaton", " ", "with", " ", "this", " ", 
+     RowBox[{"range", "."}]}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"ArrayPlot", "[", 
+     RowBox[{"CellularAutomaton", "[", 
+      RowBox[{"225", ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", "1", "}"}], ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"100", ",", "All"}], "}"}]}], "]"}], "]"}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{"Higher", "\[Hyphen]", 
+     RowBox[{"dimensional", " ", "rule", " ", 
+      RowBox[{"specifications", "."}]}]}], "*)"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"code797", "=", 
+     RowBox[{"{", 
+      RowBox[{"797", ",", 
+       RowBox[{"{", 
+        RowBox[{"2", ",", "1"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", "1"}], "}"}]}], "}"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"CellularAutomaton", "[", 
+     RowBox[{"code797", ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"{", "1", "}"}], "}"}], ",", "0"}], "}"}], ",", "1"}], "]"}],
+     ";"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "This", " ", "shows", " ", "step", " ", "70", " ", "in", " ", "the", " ", 
+     RowBox[{"evolution", "."}]}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"ArrayPlot", "[", 
+     RowBox[{"First", "[", 
+      RowBox[{"CellularAutomaton", "[", 
+       RowBox[{"code797", ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"{", "1", "}"}], "}"}], ",", "0"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"{", "70", "}"}], "}"}]}], "]"}], "]"}], "]"}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "This", " ", "shows", " ", "all", " ", "steps", " ", "in", " ", "a", " ", 
+     "slice", " ", "along", " ", "the", " ", 
+     RowBox[{"axis", "."}]}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"ArrayPlot", "[", 
+     RowBox[{"Map", "[", 
+      RowBox[{"First", ",", 
+       RowBox[{"CellularAutomaton", "[", 
+        RowBox[{"code797", ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"{", "1", "}"}], "}"}], ",", "0"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"70", ",", 
+           RowBox[{"{", "0", "}"}], ",", "All"}], "}"}]}], "]"}]}], "]"}], 
+     "]"}], ";"}]}]}]], "Input",
+ CellChangeTimes->{{3.672655117167738*^9, 3.6726551173143854`*^9}, {
+  3.672655261482137*^9, 3.672655262337513*^9}}]
+},
+WindowSize->{1904, 997},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"10.4 for Microsoft Windows (64-bit) (April 11, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 16265, 436, 1592, "Input"]
+}
+]
+*)
+
